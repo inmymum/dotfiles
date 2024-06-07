@@ -9,11 +9,13 @@ wget -q https://github.com/$(curl -s https://github.com/Alex313031/Thorium/relea
 unzip -qq $(ls /home/$USER/apps/thorium/) -d /home/$USER/apps/thorium
 echo "  Installed browser into /home/$USER/apps/thorium/"
 echo "  Downloading packages"
-sudo pacman -S --noconfirm hyprlock unzip
+sudo pacman -S --noconfirm hyprlock hypridle unzip
 echo "  Installed packages"
 echo "Setting up configuration files"
 echo "  hyprland"
 curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/hypr/hyprland.conf | tee /home/$USER/.config/hypr/hyprland.conf
+echo "  hypridle"
+curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/hypr/hypridle.conf | tee /home/$USER/.config/hypr/hypridle.conf
 echo "  hyprlock"
 curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/hypr/hyprlock.conf | tee /home/$USER/.config/hypr/hyprlock.conf
 echo "  autologin"
