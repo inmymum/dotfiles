@@ -1,9 +1,8 @@
 **Easy install script**
 
-Append options="" install() for specfic options 
+Append options="" install() for specfic options, otherwise defaults are applied
 
 _[hyprland,hypridle,hyprlock,browser,tlp,autologin,bootmenu]_
-Otherwise defaults are applied
 
 `curl https://raw.githubusercontent.com/inmymum/dotfiles/main/install.sh|bash`
 
