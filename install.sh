@@ -50,7 +50,7 @@ else
     echo "-> autologin"
     curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/etc/sddm.conf.d/autologin.conf | sudo tee /etc/sddm.conf.d/autologin.conf > /dev/null
   fi
-  if [[ $bootmenu ]]; then
+  if [[ echo $packages|grep -o bootmenu > /dev/null ]]; then
     echo "-> bootloader"
     sudo sed -i "/options/s/$/ quiet/" /boot/loader/entries/$(ls /boot/loader/entries/|grep -v fallback)
     curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/boot/loader/loader.conf | sudo tee /boot/loader/loader.conf > /dev/null
