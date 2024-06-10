@@ -44,7 +44,8 @@ else
     sudo systemctl enable tlp > /dev/null
     curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/etc/tlp.conf | sudo tee /etc/tlp.conf > /dev/null 
   fi
-  if [[ echo $packages|grep -o pmenu ]]; then
+  if [[ echo $packages|grep -o pwrmenu > /dev/null ]]; then
+    echo "-> power-menu"
     curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/scripts/power.sh | sudo tee /home/$USER/.config/scripts/power.sh > /dev/null 
     chmod +x /home/$USER/.config/scripts/power.sh
     curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/wofi/style.css | sudo tee /home/$USER/.config/wofi/style.css> /dev/null 
@@ -55,7 +56,7 @@ else
     rm /home/$USER/.config/hypr/hyprland.conf
     curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/hypr/hyprland.conf | tee /home/$USER/.config/hypr/hyprland.conf > /dev/null
   fi
-  if [[ echo $packages|grep -o hyprland > /dev/null ]]; then
+  if [[ echo $packages|grep -o autologin> /dev/null ]]; then
     sudo mkdir /etc/sddm.conf.d/
     echo "-> autologin"
     curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/etc/sddm.conf.d/autologin.conf | sudo tee /etc/sddm.conf.d/autologin.conf > /dev/null
