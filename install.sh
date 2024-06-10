@@ -21,7 +21,7 @@ echo "  tlp"
 sudo systemctl enable tlp
 curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/etc/tlp.conf | sudo tee /etc/tlp.conf > /dev/null 
 echo "  bootloader"
-sudo sed -i "/options/s/$/ silent/" /boot/loader/entries/$(ls /boot/loader/entries/|grep -v fallback)
+sudo sed -i "/options/s/$/ quiet/" /boot/loader/entries/$(ls /boot/loader/entries/|grep -v fallback)
 curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/boot/loader/loader.conf | sudo tee /boot/loader/loader.conf > /dev/null
 echo "  autologin"
 curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/etc/sddm.conf.d/autologin.conf | sudo tee /etc/sddm.conf.d/autologin.conf > /dev/null
