@@ -13,6 +13,9 @@ if [[ ! $options ]]; then
   curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/etc/sddm.conf.d/autologin.conf | sudo tee /etc/sddm.conf.d/autologin.conf > /dev/null
   sudo sed -i "/options/s/$/ quiet/" /boot/loader/entries/$(ls /boot/loader/entries/|grep -v fallback)
   curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/boot/loader/loader.conf | sudo tee /boot/loader/loader.conf > /dev/null
+  curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/scripts/power.sh | sudo tee /home/$USER/.config/scripts/power.sh > /dev/null 
+  chmod +x /home/$USER/.config/scripts/power.sh
+  curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/wofi/style.css | sudo tee /home/$USER/.config/wofi/style.css> /dev/null 
 else
   packages=""
   echo "Installing apps and configs"
@@ -33,13 +36,18 @@ else
     wget -q https://github.com/$(curl -s https://github.com/Alex313031/Thorium/releases|grep '<a href="/Alex313031/thorium/releases'|grep SSE3.zip|awk '{print substr($0,18,93)}') -P /home/$USER/apps/thorium
     unzip -qq $(ls /home/$USER/apps/thorium/) -d /home/$USER/apps/thorium
   fi
-  if [[ echo $packages|grep -o tlp > /dev/null ]; then
-    packages+="tlp "
+  if [[ echo $packages|grep -o tlp > /dev/null ]]; then
+    sudo pacman -S --noconfirm tlp > /dev/null
     echo "-> tlp"
     sudo systemctl enable tlp > /dev/null
     curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/etc/tlp.conf | sudo tee /etc/tlp.conf > /dev/null 
   fi
-    sudo pacman -S --noconfirm $packages > /dev/null
+  if [[ echo $packages|grep -o pmenu ]]; then
+    curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/scripts/power.sh | sudo tee /home/$USER/.config/scripts/power.sh > /dev/null 
+    chmod +x /home/$USER/.config/scripts/power.sh
+    curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/wofi/style.css | sudo tee /home/$USER/.config/wofi/style.css> /dev/null 
+  fi  
+  sudo pacman -S --noconfirm $packages > /dev/null
   if [[ echo $packages|grep -o hyprland > /dev/null ]]; then
     echo "-> hyprland"
     rm /home/$USER/.config/hypr/hyprland.conf
