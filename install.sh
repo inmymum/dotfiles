@@ -44,6 +44,3 @@ install() {
 }
 echo "Run with [option]=[true/false] install() to install apps and my configs."
 echo "Options include: $hyprland $hypridle $hyprlock $browser $tlp $autologin $bootmenu"
-echo ""
-echo "to install all apps and configs run:"
-echo '$hyprland="true" $hypridle="true" $hyprlock="true" $browser="true" $tlp="true" $autologin="true" $bootmenu="true" install()'
