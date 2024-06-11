@@ -2,12 +2,12 @@
 op=$( echo -e " Poweroff\n Reboot\n Lock " | wofi -p "" -G -i --width 105 --height 125 -y 325 -x 605 --dmenu --cache-file /dev/null | awk '{print tolower($2)}' )
 case $op in 
         poweroff)
-                poweroff
+                pkill wofi && poweroff
                 ;;
         reboot)
-                reboot
+                pkill wofi && reboot
                 ;;
         lock)
-		hyprlock -q
+		pkill wofi && hyprlock -q
                 ;;
 esac
