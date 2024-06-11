@@ -1,4 +1,4 @@
-### Easy install script
+### Easy install script (for arch)
 
 ```console 
 curl https://raw.githubusercontent.com/inmymum/dotfiles/main/install.sh|bash
