@@ -7,7 +7,7 @@ if [[ ! $options ]]; then
   mkdir /home/$USER/apps
   mkdir /home/$USER/apps/thorium
   wget -q https://github.com/$(curl -s https://github.com/Alex313031/Thorium/releases|grep '<a href="/Alex313031/thorium/releases'|grep SSE3.zip|awk '{print substr($0,18,93)}') -P /home/$USER/apps/thorium
-  unzip -qq $(ls /home/$USER/apps/thorium/) -d /home/$USER/apps/thorium
+  unzip -qq $(ls /home/$USER/apps/thorium/) -d /home/$USER/apps/thorium/
   sudo systemctl enable tlp > /dev/null
   curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/etc/tlp.conf | sudo tee /etc/tlp.conf > /dev/null 
   rm /home/$USER/.config/hypr/hyprland.conf
