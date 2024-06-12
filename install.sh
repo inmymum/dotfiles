@@ -20,6 +20,8 @@ if [[ ! $options ]]; then
   sudo chmod +x /home/$USER/.config/scripts/power.sh
   curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/wofi/style.css | sudo tee /home/$USER/.config/wofi/style.css> /dev/null 
   curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/etc/systemd/logind.conf | sudo tee /etc/systemd/logind.conf > /dev/null
+  curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/scripts/brightnessctl.sh | sudo tee /usr/bin/brightnessctl
+  sudo chmod +x /usr/bin/brightnessctl
 else
   packages=""
   echo "Installing apps and configs"
