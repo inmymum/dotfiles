@@ -8,7 +8,6 @@ wget -q https://github.com/$(curl -s https://github.com/Alex313031/Thorium/relea
 unzip -qq $(ls /home/$USER/apps/thorium/) -d /home/$USER/apps/thorium/
 sudo systemctl enable tlp > /dev/null
 curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/etc/tlp.conf | sudo tee /etc/tlp.conf > /dev/null 
-rm /home/$USER/.config/hypr/hyprland.conf
 curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/hypr/hyprland.conf | tee /home/$USER/.config/hypr/hyprland.conf > /dev/null
 sudo mkdir /etc/sddm.conf.d/
 curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/etc/sddm.conf.d/autologin.conf | sudo tee /etc/sddm.conf.d/autologin.conf > /dev/null
