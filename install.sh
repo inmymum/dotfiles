@@ -21,8 +21,6 @@ if [[ ! $(echo $options) ]]; then
   curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/wofi/style.css | sudo tee /home/$USER/.config/wofi/style.css> /dev/null 
   mkdir /home/$USER/.config/scripts
   curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/scripts/power.sh | sudo tee /home/$USER/.config/scripts/power.sh > /dev/null 
-  curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/scripts/brightness.sh | sudo tee /usr/bin/brightness
-  sudo chmod +x /usr/bin/brightness
 else
   packages=""
   echo "Installing apps and configs"
