@@ -6,4 +6,4 @@ curl https://raw.githubusercontent.com/inmymum/dotfiles/main/install.sh|bash
 
 #### Options
 ###### Append ```options=""``` to the beginning for specfic options, otherwise defaults are applied
-hyprland, hypridle, hyprlock, browser, tlp, autologin, bootmenu, pmenu, brightnessctl
+hyprland, hypridle, hyprlock, browser, tlp, autologin, bootmenu, pmenu
