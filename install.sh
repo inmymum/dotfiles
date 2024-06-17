@@ -16,6 +16,7 @@ if [[ ! $(echo $options) ]]; then
   sudo sed -i "/options/s/$/ quiet/" /boot/loader/entries/$(ls /boot/loader/entries/|grep -v fallback)
   curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/boot/loader/loader.conf | sudo tee /boot/loader/loader.conf > /dev/null
   curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/etc/systemd/logind.conf | sudo tee /etc/systemd/logind.conf > /dev/null
+  mkdir /home/$USER/.config/procps
   curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/procps/toprc | tee /home/$USER/.config/procps/toprc > /dev/null
   mkdir /home/$USER/.config/wofi
   curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/wofi/style.css | tee /home/$USER/.config/wofi/style.css > /dev/null 
@@ -43,6 +44,7 @@ else
     unzip -qq $(ls /home/$USER/apps/thorium/) -d /home/$USER/apps/thorium
   fi
   if [[ $(echo $packages|grep -o top) ]]; then
+    mkdir /home/$USER/.config/procps
     curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/procps/toprc | tee /home/$USER/.config/procps/toprc
   fi
   if [[ $(echo $packages|grep -o tlp) ]]; then
