@@ -16,11 +16,12 @@ if [[ ! $(echo $options) ]]; then
   sudo sed -i "/options/s/$/ quiet/" /boot/loader/entries/$(ls /boot/loader/entries/|grep -v fallback)
   curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/boot/loader/loader.conf | sudo tee /boot/loader/loader.conf > /dev/null
   curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/etc/systemd/logind.conf | sudo tee /etc/systemd/logind.conf > /dev/null
-  sudo chmod +x /home/$USER/.config/scripts/power.sh
+  curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/procps/toprc | tee /home/$USER/.config/procps/toprc > /dev/null
   mkdir /home/$USER/.config/wofi
-  curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/wofi/style.css | sudo tee /home/$USER/.config/wofi/style.css> /dev/null 
+  curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/wofi/style.css | tee /home/$USER/.config/wofi/style.css > /dev/null 
   mkdir /home/$USER/.config/scripts
-  curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/scripts/power.sh | sudo tee /home/$USER/.config/scripts/power.sh > /dev/null 
+  curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/scripts/power.sh | tee /home/$USER/.config/scripts/power.sh > /dev/null 
+  sudo chmod +x /home/$USER/.config/scripts/power.sh
 else
   packages=""
   echo "Installing apps and configs"
@@ -41,6 +42,9 @@ else
     wget -q https://github.com/$(curl -s https://github.com/Alex313031/Thorium/releases|grep '<a href="/Alex313031/thorium/releases'|grep SSE3.zip|awk '{print substr($0,18,93)}') -P /home/$USER/apps/thorium
     unzip -qq $(ls /home/$USER/apps/thorium/) -d /home/$USER/apps/thorium
   fi
+  if [[ $(echo $packages|grep -o top) ]]; then
+    curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/procps/toprc | tee /home/$USER/.config/procps/toprc
+  fi
   if [[ $(echo $packages|grep -o tlp) ]]; then
     sudo pacman -S --noconfirm tlp > /dev/null
     echo "-> tlp"
@@ -49,9 +53,9 @@ else
   fi
   if [[ $(echo $packages|grep -o pmenu) ]]; then
     echo "-> power-menu"
-    curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/scripts/power.sh | sudo tee /home/$USER/.config/scripts/power.sh > /dev/null 
+    curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/scripts/power.sh | tee /home/$USER/.config/scripts/power.sh > /dev/null 
     chmod +x /home/$USER/.config/scripts/power.sh
-    curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/wofi/style.css | sudo tee /home/$USER/.config/wofi/style.css> /dev/null 
+    curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/wofi/style.css | tee /home/$USER/.config/wofi/style.css> /dev/null 
   fi  
   sudo pacman -S --noconfirm $packages > /dev/null
   if [[ $(echo $packages|grep -o hyprland) ]]; then
