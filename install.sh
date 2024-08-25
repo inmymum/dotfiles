@@ -8,7 +8,7 @@ if [[ ! $(echo $options) ]]; then
   curl -s https://raw.githubusercontent.com/inmymum/dotfiles/main/.config/hypr/hyprlock.conf | tee /home/$USER/.config/hypr/hyprlock.conf > /dev/null
   mkdir /home/$USER/apps
   mkdir /home/$USER/apps/thorium
-  wget -q https://github.com/$(curl -s https://github.com/Alex313031/Thorium/releases|grep '<a href="/Alex313031/thorium/releases'|grep SSE3.zip|awk '{print substr($0,18,93)}') -P /home/$USER/apps/thorium
+  wget -q https://github.com/Alex313031/thorium/releases/download/M126.0.6478.231/thorium-browser_126.0.6478.231_SSE4.zip -P /home/$USER/apps/thorium
   unzip -qq /home/$USER/apps/thorium/$(ls /home/$USER/apps/thorium/) -d /home/$USER/apps/thorium/
   rm /home/$USER/apps/thorium/*.zip
   sudo mkdir /etc/sddm.conf.d/
