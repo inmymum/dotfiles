@@ -164,7 +164,7 @@ layout {
     }
 }
 
-// spawn-at-startup "alacritty" "-e" "fish"
+// spawn-at-startup "waybar" "--logging-level" "off"
 
 // Disable the "important hotkeys" popup
 hotkey-overlay {
