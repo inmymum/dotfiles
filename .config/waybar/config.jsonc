@@ -1,0 +1,45 @@
+[{
+    "layer": "top",
+    "position": "bottom",
+    "margin": "10",
+    "height": "80",
+    "output": "eDP-1",
+    "modules-left": ["wlr/taskbar"],
+    //"modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "battery", "clock"],
+    "battery": {
+        "format": "{icon} ",
+        "format-icons": ["", "", "", "", ""],
+        "states": {
+          "warning": 30,
+          "critical": 15
+        },
+    },
+  "wlr/taskbar": {
+    "icon-size": 25,
+    "on-click": "activate",
+    "format": "{icon}"
+  },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {format_source}",
+        "format-bluetooth": "{icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+    },
+    "tray": {
+        "icon-size": 14,
+        "spacing": 10
+    }
+}]
