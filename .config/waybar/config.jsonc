@@ -4,9 +4,9 @@
     "margin": "10",
     "height": "80",
     "output": "eDP-1",
-    "modules-left": ["wlr/taskbar"],
-    //"modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "battery", "clock"],
+    //"modules-left": ["clock"],
+    "modules-center": ["wlr/taskbar"],
+    "modules-right": ["battery", "pulseaudio"],
     "battery": {
         "format": "{icon} ",
         "format-icons": ["", "", "", "", ""],
@@ -37,9 +37,5 @@
             "car": "",
             "default": ["", "", ""]
         },
-    },
-    "tray": {
-        "icon-size": 14,
-        "spacing": 10
     }
 }]
