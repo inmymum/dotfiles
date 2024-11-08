@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": [],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "backlight", "battery","custom/power"],
+    "modules-right": ["pulseaudio", "backlight", "battery", "custom/power"],
 
     //***************************
     //*  Modules configuration  *
@@ -22,11 +22,11 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "reverse-scrolling": 1,
-        "format": "{volume}% {icon} {format_source}",
+        "format": " {volume}% {icon}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": "婢 {format_source}",
-        "format-source": "{volume}% ",
+        "format-source": "{volume}%  ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
@@ -37,16 +37,18 @@
             "car": "",
             "default": [" ", " ", " "]
         },
-        "min-length": 13,
+        "min-length": 7,
     },
+
     "custom/power": {
         "format": " ",
-        "on-click": "wlogout"
+        "on-click": "systemctl poweroff"
     },
+
     "backlight": {
         "device": "intel_backlight",
         "format": "{percent}% {icon}",
-        "format-icons": ["","","","", "", "", ""],
+        "format-icons": [""],
         "min-length": 7,
     },
 
