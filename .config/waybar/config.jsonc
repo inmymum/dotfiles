@@ -1,41 +1,64 @@
-[{
-    "layer": "top",
-    "position": "bottom",
-    "margin": "10",
-    "height": "80",
-    "output": "eDP-1",
-    //"modules-left": ["clock"],
-    "modules-center": ["wlr/taskbar"],
-    "modules-right": ["battery", "pulseaudio"],
-    "battery": {
-        "format": "{icon} ",
-        "format-icons": ["", "", "", "", ""],
-        "states": {
-          "warning": 30,
-          "critical": 15
-        },
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    // "height": 30, // Waybar height (to be removed for auto height)
+    "margin": "5 20 0 20",
+    // "width": 1366, // Waybar width
+    // Choose the order of the modules
+    "modules-left": [],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "backlight", "battery","custom/power"],
+
+    //***************************
+    //*  Modules configuration  *
+    //***************************
+
+    "clock": {
+        // "timezone": "America/Chicago",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%a, %d %b, %I:%M %p}"
     },
-  "wlr/taskbar": {
-    "icon-size": 25,
-    "on-click": "activate",
-    "format": "{icon}"
-  },
+
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {format_source}",
-        "format-bluetooth": "{icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "",
+        "reverse-scrolling": 1,
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "婢 {format_source}",
+        "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "",
+            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [" ", " ", " "]
         },
-    }
-}]
+        "min-length": 13,
+    },
+    "custom/power": {
+        "format": " ",
+        "on-click": "wlogout"
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["","","","", "", "", ""],
+        "min-length": 7,
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""],
+    },
+}
