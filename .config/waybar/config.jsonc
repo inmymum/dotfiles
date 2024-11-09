@@ -44,7 +44,6 @@
         "format": " ",
         "on-click": "systemctl poweroff"
     },
-
     "backlight": {
         "device": "intel_backlight",
         "format": "{percent}% {icon}",
@@ -58,7 +57,7 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""],
