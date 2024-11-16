@@ -2,16 +2,11 @@
 
 ### Lemurs --- (display manager)
 
-In order to set up lemurs install it and enable the service:
-
-```sudo pacman -S lemurs```
-
-```sudo systemctl enable lemurs```
-
 In order to add a session to lemurs run:
 
-```echo exec=niri | sudo tee /etc/lemurs/wayland/niri```
+```desktop="niri" echo "exec niri" | sudo tee /etc/lemurs/wayland/$desktop```
 
-Make it executable: 
-```sudo chmod 755 /etc/lemurs/wayland/```
+And make it executable: 
+```desktop="niri" sudo chmod 755 /etc/lemurs/wayland/$desktop```
 
+Be sure to install xorg-xauth so inputs work in niri
