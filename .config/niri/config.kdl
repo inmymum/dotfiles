@@ -233,7 +233,7 @@ binds {
     // Switches focus between the current and the previous workspace.
     // Mod+Tab { focus-workspace-previous; }
 
-    Mod+R { switch-preset-column-width; }
+    Mod+SPACE { switch-preset-column-width; }
     F4 { maximize-column; }
     Mod+F { fullscreen-window; }
 }
