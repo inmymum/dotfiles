@@ -32,7 +32,7 @@
             "portable": "",
             "default": [" ", " ", " "]
         },
-        "min-length": 7,
+        "min-length": 7
     },
 
     "custom/power": {
@@ -43,7 +43,7 @@
         "device": "intel_backlight",
         "format": "{percent}% {icon}",
         "format-icons": [""],
-        "min-length": 7,
+        "min-length": 7
     },
 
     "battery": {
@@ -56,5 +56,6 @@
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""],
+        "full-at": 80
     },
 }
