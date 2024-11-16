@@ -24,7 +24,7 @@ input {
 
     // Focus windows and outputs automatically when moving the mouse into them.
     //Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    // focus-follows-mouse max-scroll-amount="0%"
+    //focus-follows-mouse max-scroll-amount="0%"
 }
 
 /-output "eDP-1" {
@@ -71,7 +71,7 @@ layout {
     // - "always", the focused column will always be centered.
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
-    center-focused-column "always"
+    center-focused-column "never"
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
@@ -105,7 +105,7 @@ layout {
     // You can change how the focus ring looks.
     focus-ring {
         // Uncomment this line to disable the focus ring.
-        // off
+        off
 
         // How many logical pixels the ring extends out from the windows.
         width 4
@@ -164,7 +164,7 @@ layout {
     }
 }
 
-// spawn-at-startup "waybar" "--logging-level" "off"
+spawn-at-startup "waybar" "--log-level" "off"
 
 // Disable the "important hotkeys" popup
 hotkey-overlay {
@@ -180,7 +180,7 @@ animations {
 
 binds {
     Mod+RETURN { spawn "alacritty"; }
-    F5 { spawn "fuzzel" }
+    F5 { spawn "fuzzel"; }
     //Super+L { spawn "hyprlock"; }
 
     F10 allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
