@@ -180,7 +180,7 @@ animations {
 
 binds {
     Mod+RETURN { spawn "alacritty"; }
-    F5 { spawn "fuzzel" "--inner-pad" "25" "--vertical-pad" "25" "-b" "001010ff" "--selection-color" "001010ff" "--selection-text" "cb4b16ff"; }
+    F5 { spawn "fuzzel" }
     //Super+L { spawn "hyprlock"; }
 
     F10 allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
