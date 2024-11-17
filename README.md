@@ -2,9 +2,8 @@
 These are dotfiles for both my niri configs that I use.
 ### Important!
 Be sure to install a ```ttf-font``` so alacritty will launch
-In order to add a niri session to lemurs add the following to /etc/lemurs/wayland/niri
 
-In order to add a niri session edit: /etc/lemurs/wayland/niri to contain
+In order to add a niri session to lemurs add the following to /etc/lemurs/wayland/niri
 ```
 #! /bin/bash
 exec niri
