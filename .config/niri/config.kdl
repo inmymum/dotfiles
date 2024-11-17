@@ -165,6 +165,7 @@ layout {
 }
 
 spawn-at-startup "waybar" "--log-level" "off"
+spawn-at-startup "swaybg" "-i" "/home/isaac/Images/planet_mountains.jpg"
 
 // Disable the "important hotkeys" popup
 hotkey-overlay {
