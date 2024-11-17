@@ -1,12 +1,33 @@
-# These are dotfiles for both my niri and hyprland configs that I have used or are using.
+## About
+These are dotfiles for both my niri configs that I use.
+### Important!
+Be sure to install a ```ttf-font``` so alacritty will launch
+In order to add a niri session to lemurs add the following to /etc/lemurs/wayland/niri
 
-### Lemurs --- (display manager)
+In order to add a niri session edit: /etc/lemurs/wayland/niri to contain
+```
+#! /bin/bash
+exec niri
+```
+and make it executable with ```sudo chmod +755 /etc/lemurs/wayland/niri```
 
-In order to add a session to lemurs run:
+### Utilies
+terminal: ```alacritty```
 
-```desktop="niri" echo "exec niri" | sudo tee /etc/lemurs/wayland/$desktop```
+browser: ```mercury-browser```
 
-And make it executable: 
-```desktop="niri" sudo chmod 755 /etc/lemurs/wayland/$desktop```
+background: ```swaybg``` 
 
-Be sure to install xorg-xauth so inputs work in niri
+status bar: ```waybar``` (needs ```ttf-font-awesome```)
+
+app launcher: ```fuzzel```
+
+
+
+
+
+
+
+
+
+
