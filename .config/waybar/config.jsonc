@@ -7,25 +7,38 @@
     // Choose the order of the modules
     "modules-left": [],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "backlight", "battery", "custom/power"],
+    "modules-right": ["group/status-bar","custom/power"],
 
     //***************************
     //*  Modules configuration  *
     //***************************
 
+    "custom/power": {
+        "format": " ",
+        "on-click": "systemctl poweroff"
+    },
+    "niri/window": {
+        "format": "{app_id}"
+    },
+    "niri/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": ""
+        }
+    },
     "clock": {
         // "timezone": "America/Chicago",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%a, %d %b, %I:%M %p}"
     },
-
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "reverse-scrolling": 1,
-        "format": " {volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}z {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {volume}% ",
+        "format-muted": "{volume}% ",
         "format-icons": {
             "headphone": "",
             "phone": "",
@@ -34,18 +47,12 @@
         },
         "min-length": 7
     },
-
-    "custom/power": {
-        "format": " ",
-        "on-click": "systemctl poweroff"
-    },
     "backlight": {
         "device": "intel_backlight",
         "format": "{percent}% {icon}",
         "format-icons": [""],
         "min-length": 7
     },
-
     "battery": {
         "states": {
             "warning": 30,
@@ -54,8 +61,18 @@
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+        //"format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""],
         "full-at": 80
+    },
+
+    "group/status-bar": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 1000,
+            "transition-left-to-right": false,
+            "click-to-reveal": true
+        },
+        "modules": ["battery", "pulseaudio", "backlight"]
     },
 }
