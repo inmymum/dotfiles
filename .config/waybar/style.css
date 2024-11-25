@@ -14,21 +14,56 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
-
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+
 #workspaces button:hover {
     transition: none;
     box-shadow: inherit;
     text-shadow: inherit;
     border-radius: inherit;
-    color: #383c4a;
-    background: #7c818c;
+    color: white;
+    background: #383c4a;
 }
 
-#workspaces button.focused {
+/* Set rounding and background of window module */
+#window {
+    background: #383c4a;
+    border-radius: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
     color: white;
 }
 
+/* Make the window module hide when there is no active window */
+window#waybar.empty #window {
+    background: transparent;
+}
+
+/* Set proper rounding dynamically because workspaces are created */
+#workspaces button#niri-workspace-1 {
+    background: #383c4a;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#workspaces button {
+    background: #383c4a;
+    border-radius: 0px;
+    color: white;
+}
+
+#workspaces button.empty {
+    margin-right: 8px;
+    background: #383c4a;
+    border-radius: 0px 10px 10px 0px;
+    color: white;
+}
+
+/* Sets the icon color of active workspace to orange */
+#workspaces button.active {
+    color: orange;
+}
+
+/* Set rounding and background of clock*/
 #clock {
     padding-left: 16px;
     padding-right: 16px;
@@ -38,6 +73,17 @@ window#waybar.hidden {
     background: #383c4a;
 }
 
+#custom-notification {
+    padding-left: 8px;
+    padding-right:8px;
+    margin-left: 8px;
+    border-radius: 10px;
+    transition: none;
+    color: #ffffff;
+    background: #383c4a;
+}
+
+/* Set rounding and background of audio*/
 #pulseaudio {
     margin-right: 8px;
     padding-left: 16px;
@@ -48,11 +94,13 @@ window#waybar.hidden {
     background: #383c4a;
 }
 
+/* Set the color of the audio module to blue if muted */
 #pulseaudio.muted {
     background-color: #90b1b1;
     color: #2a5c45;
 }
 
+/* Set rounding and background */
 #backlight {
     margin-right: 8px;
     padding-left: 16px;
@@ -63,6 +111,7 @@ window#waybar.hidden {
     background: #383c4a;
 }
 
+/* Set rounding and background */
 #battery {
     margin-right: 8px;
     padding-left: 16px;
@@ -97,15 +146,6 @@ window#waybar.hidden {
     padding-right: 12px;
     padding-left: 16px;
     border-radius: 10px;
-    transition: none;
-    color: #ffffff;
-    background: #383c4a;
-}
-
-#custom-lock {
-    padding-right: 12px;
-    padding-left: 16px;
-    border-radius: 10px 0px 0px 10px;
     transition: none;
     color: #ffffff;
     background: #383c4a;
