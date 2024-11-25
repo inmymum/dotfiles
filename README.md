@@ -26,10 +26,8 @@ app launcher: ```fuzzel```
 
 display manager: ```ly```
 
-notification manager: ```dunst```
-
 ```
-sudo pacman -S --needed alacritty nano swaybg niri waybar ttf-font-awesome fuzzel ly dunst
+sudo pacman -S --needed alacritty nano swaybg niri waybar ttf-font-awesome fuzzel ly
 sudo systemctl enable ly
 ```
 
