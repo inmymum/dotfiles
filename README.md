@@ -7,27 +7,27 @@ These are dotfiles for both my niri configs that I use.
 ### Important!
 Be sure to install a ```ttf-font``` so alacritty will launch
 
-In order to add a niri session to lemurs add the following to /etc/lemurs/wayland/niri
-
-
-```
-#! /bin/bash
-exec niri
-```
-and make it executable with ```sudo chmod +755 /etc/lemurs/wayland/niri```
-
 ### Utilies
 terminal: ```alacritty```
 
-browser: ```mercury-browser```
+text editor: ```nano```
 
-background: ```swaybg``` 
+background: ```swaybg```
+
+desktop: ```niri```
 
 status bar: ```waybar``` (needs ```ttf-font-awesome```)
 
 app launcher: ```fuzzel```
 
+display manager: ```ly```
 
+notification manager: ```dunst```
+
+```
+sudo pacman -S --needed alacritty nano swaybg niri waybar ttf-font-awesome fuzzel ly dunst
+sudo systemctl enable ly
+```
 
 
 
