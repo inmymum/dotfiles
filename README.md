@@ -4,7 +4,7 @@ These are dotfiles for both my niri configs that I use.
 ## Screenshots
 #### Basic config
 ![Simple](https://github.com/user-attachments/assets/b208d4c5-bcb9-4e93-8b2a-071eb6d4279c)
-#### Advanced collapsing config
+#### Advanced collapsing waybar config
 ![Advanced](https://github.com/user-attachments/assets/438f56b2-1b9f-4b98-938b-19554088d34a)
 
 
