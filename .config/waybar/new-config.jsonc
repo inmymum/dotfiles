@@ -1,0 +1,35 @@
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "reverse-scrolling": 1,
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}z {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "{volume}% ",
+        "format-icons": {
+            "headphone": "",
+            "phone": "",
+            "portable": "",
+            "default": [" ", " ", " "]
+        },
+        "min-length": 7
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": [""],
+        "min-length": 7
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        //"format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "full-at": 80
+    },
