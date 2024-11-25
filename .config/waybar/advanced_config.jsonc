@@ -1,3 +1,33 @@
+{
+    "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    // "height": 30, // Waybar height (to be removed for auto height)
+    "margin": "5 20 0 20",
+    // "width": 1366, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["group/window-management"],
+    "modules-center": ["clock"],
+    "modules-right": ["group/status-bar","custom/power"],
+
+    //***************************
+    //*  Modules configuration  *
+    //***************************
+
+    "niri/window": {
+        "format": "{app_id}"
+    },
+    "niri/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": ""
+        }
+    },
+    "clock": {
+        // "timezone": "America/Chicago",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%a, %d %b, %I:%M %p}"
+    },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "reverse-scrolling": 1,
@@ -13,14 +43,12 @@
         },
         "min-length": 7
     },
-
     "backlight": {
         "device": "intel_backlight",
         "format": "{percent}% {icon}",
         "format-icons": [""],
         "min-length": 7
     },
-
     "battery": {
         "states": {
             "warning": 30,
@@ -33,3 +61,27 @@
         "format-icons": ["", "", "", "", ""],
         "full-at": 80
     },
+    "custom/power": {
+        "format": " ",
+        "on-click": "systemctl poweroff"
+    },
+
+    "group/window-management": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 1000,
+            "transition-left-to-right": false,
+            "click-to-reveal": true
+        },
+        "modules": ["niri/window", "niri/workspaces"]
+    },
+    "group/status-bar": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 1000,
+            "transition-left-to-right": false,
+            "click-to-reveal": true
+        },
+        "modules": ["battery", "pulseaudio", "backlight"]
+    }
+}
