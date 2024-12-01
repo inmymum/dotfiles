@@ -9,27 +9,31 @@ These are dotfiles for both my niri configs that I use.
 Be sure to install a ```ttf-font``` so alacritty will launch
 
 ### Utilies
+desktop: ```niri```
+
+tui display manager: ```ly```
+
 terminal: ```alacritty```
 
 text editor: ```nano```
 
 background: ```swaybg```
 
-desktop: ```niri```
-
 status bar: ```waybar``` (needs ```ttf-font-awesome```)
 
-iwctl gui: ```iwmenu``` (needs ```fuzzel```)
+iwctl gui: ```iwmenu``` [(AUR)](https://aur.archlinux.org/packages/iwmenu-git) (needs ```fuzzel```)
+
+logout gui: ```wlogout``` [(AUR)](https://aur.archlinux.org/packages/wlogout)
 
 notification manager: ```dunst```
 
 app launcher: ```fuzzel```
 
-display manager: ```ly```
+
 
 ```
 sudo pacman -S --needed alacritty nano swaybg niri waybar ttf-font-awesome fuzzel ly dunst
-sudo yay -S iwmenu-git
+sudo yay -S iwmenu-git wlogout
 sudo systemctl enable ly
 ```
 
