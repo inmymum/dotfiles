@@ -164,8 +164,9 @@ layout {
     }
 }
 
-spawn-at-startup "waybar" "--log-level" "off"
-//spawn-at-startup "swaybg" "-i" "/PATH/TO/IMAGE"
+//spawn-at-startup "waybar" "--log-level" "off"
+//spawn-at-startup "swaybg" "-i" "/home/$USER/Pictures/background.jpg"
+//spawn-at-startup "dunst"
 
 // Disable the "important hotkeys" popup
 hotkey-overlay {
@@ -193,10 +194,10 @@ binds {
 
     Mod+Q { close-window; }
 
-    //Mod+Left  { focus-column-left; }
-    //Mod+Down  { focus-window-down; }
-    //Mod+Up    { focus-window-up; }
-    //Mod+Right { focus-column-right; }
+    Mod+Left  { focus-column-left; }
+    Mod+Down  { focus-workspace-down; }
+    Mod+Up    { focus-workspace-up; }
+    Mod+Right { focus-column-right; }
 
     //Mod+Ctrl+Left  { move-column-left; }
     //Mod+Ctrl+Down  { move-window-down; }
