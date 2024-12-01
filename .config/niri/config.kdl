@@ -183,14 +183,13 @@ animations {
 binds {
     Mod+RETURN { spawn "alacritty"; }
     F5 { spawn "fuzzel"; }
-    //Super+L { spawn "hyprlock"; }
 
     F10 allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     F9 allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     F8 allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
 
-    F7 { spawn "brightnessctl" "-q" "set" "+5%"; }
-    F6 { spawn "brightnessctl" "-q" "set" "5%-"; }
+    //F7 { spawn "brightnessctl" "-q" "set" "+5%"; }
+    //F6 { spawn "brightnessctl" "-q" "set" "5%-"; }
 
     Mod+Q { close-window; }
 
