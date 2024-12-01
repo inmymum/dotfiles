@@ -1,0 +1,15 @@
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "keybind" : "s",
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "keybind" : "r"
+}
+{
+    "label" : "logout",
+    "action" : "niri msg action quit",
+    "keybind" : "l"
+}
