@@ -9,7 +9,7 @@ These are dotfiles for both my niri configs that I use.
 Be sure to install a ```ttf-font``` so alacritty will launch
 
 ### Utilies
-desktop: ```niri```
+wayland compositor ```niri```
 
 tui display manager: ```ly```
 
