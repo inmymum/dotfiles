@@ -16,10 +16,10 @@ install_arch() {
 if [[ $(cat /etc/os-release|grep -w "NAME"|awk '{print substr($0, 6)}') = '"Arch Linux"' ]]; then
     if [ ! -f "/usr/bin/yay" ]; then
         if [ -f "/usr/bin/git" ]; then
-            cd ~/ && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si && cd ~/ && rm -rf yay-bin && yay -S --noconfirm --needed iwmenu-git wlogout alacritty nano curl swaybg niri waybar ttf-font-awesome fuzzel ly dunst && rm -rf ~/.cache/yay ~/.config/yay && install_arch()
+            cd ~/ && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si && cd ~/ && rm -rf yay-bin && yay -S --noconfirm --needed iwmenu-git wlogout alacritty nano curl gnu-free-fonts swaybg niri waybar ttf-font-awesome fuzzel ly dunst && rm -rf ~/.cache/yay ~/.config/yay && install_arch()
         else
-            sudo pacman -S --noconfirm git && cd ~/ && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si && cd ~/ && rm -rf yay-bin && yay -S --noconfirm --needed wlogout iwmenu-git alacritty nano curl swaybg niri waybar ttf-font-awesome fuzzel ly dunst && rm -rf ~/.cache/yay ~/.config/yay && install_arch()
+            sudo pacman -S --noconfirm git && cd ~/ && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si && cd ~/ && rm -rf yay-bin && yay -S --noconfirm --needed wlogout iwmenu-git alacritty nano curl swaybg niri waybar gnu-free-fonts ttf-font-awesome fuzzel ly dunst && rm -rf ~/.cache/yay ~/.config/yay && install_arch()
         fi
     else
-        yay -S --noconfirm --needed iwmenu-git wlogout alacritty tlp nano swaybg niri waybar ttf-font-awesome curl fuzzel ly dunst && system && rm -rf ~/.cache/yay ~/.config/yay && install_arch()
+        yay -S --noconfirm --needed iwmenu-git wlogout alacritty tlp nano swaybg niri waybar gnu-free-fonts ttf-font-awesome curl fuzzel ly dunst && system && rm -rf ~/.cache/yay ~/.config/yay && install_arch()
 fi
