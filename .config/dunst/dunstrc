@@ -1,0 +1,10 @@
+[global]
+origin=top-center
+offset=0x10
+
+corners=all
+corner_radius=10
+
+frame_width=0
+
+background="#383c4a"
