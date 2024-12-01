@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": [],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "backlight", "battery", "custom/power"],
+    "modules-right": ["group/status-bar"],
 
     //***************************
     //*  Modules configuration  *
@@ -18,13 +18,24 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%a, %d %b, %I:%M %p}"
     },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+              },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        //"format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "reverse-scrolling": 1,
-        "format": " {volume}% {icon}",
+        "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {volume}% ",
+        "format-muted": "{volume}% ",
         "format-icons": {
             "headphone": "",
             "phone": "",
@@ -33,25 +44,35 @@
         },
         "min-length": 7
     },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% ",
+        "min-length": 7
+    },
+    "network": {
+	"interface": "wlan0",
+	"format": "{ifname}",
+	"format-wifi": "{signalStrength}% ",
+	"format-disconnected": "",
+	"tooltip-format": "{ifname}",
+	"tooltip-format-wifi": "{essid}",
+	"tooltip-format-ethernet": "{ifname} ",
+	"tooltip-format-disconnected": "Disconnected",
+	"max-length": 50,
+        "on-click": "/usr/bin/iwmenu --icon xdg --menu fuzzel"
+    },
     "custom/power": {
         "format": " ",
         "on-click": "systemctl poweroff"
     },
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{percent}% {icon}",
-        "format-icons": [""],
-        "min-length": 7
-    },
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-  	      },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
+
+    "group/status-bar": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 1000,
+            "transition-left-to-right": true,
+            "click-to-reveal": true
+        },
+        "modules": ["battery", "backlight", "pulseaudio", "network", "custom/power"]
     }
 }
