@@ -1,0 +1,38 @@
+window {
+    font-family: Fira Code Medium;
+    font-size: 16pt;
+    color:  #1b1b1b;
+    background-color: rgba(24, 27, 32, 0.2);
+
+}
+button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    background-color: transparent;
+    animation: none;
+    box-shadow: 0 0 10px 2px transparent;
+    border-radius: 24px;
+    border: none;
+    margin: 0px;
+}
+button:hover {
+    box-shadow: none;
+    background-size: 50%;
+}
+button:focus {
+    background-size: 50%;
+    box-shadow: none;
+    background-color: transparent;
+    transition: none;
+}
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+}
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"));
+
+}
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+}
