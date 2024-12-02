@@ -165,7 +165,7 @@ layout {
 }
 
 spawn-at-startup "waybar" "--log-level" "off"
-spawn-at-startup "swaybg" "-i" "/home/$USER/Pictures/background.jpg"
+spawn-at-startup "swaybg" "-i" "/home/example_user/Pictures/background.jpg"
 spawn-at-startup "dunst"
 
 // Disable the "important hotkeys" popup
