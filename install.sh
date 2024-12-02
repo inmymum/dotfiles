@@ -13,7 +13,7 @@ install_files() {
     curl -so ~/Pictures/background.jpg https://raw.githubusercontent.com/inmymum/dotfiles/main/images/planet_mountains.jpg
     sed -i -e "s/example_user/$USER/" .config/niri/config.kdl
     rm ~/.bashrc
-    curl -so ~/.bashrc ttps://raw.githubusercontent.com/inmymum/dotfiles/main/.bashrc
+    curl -so ~/.bashrc https://raw.githubusercontent.com/inmymum/dotfiles/main/.bashrc
 }
 
 if [[ $(cat /etc/os-release|grep -w "NAME"|awk '{print substr($0, 6)}') = '"Arch Linux"' ]]; then
