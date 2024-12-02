@@ -12,7 +12,7 @@ install_files() {
     curl -so ~/.confng/wlogout/style.css https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/main/.config/wlogout/style.css
     curl -so ~/Pictures/background.jpg https://raw.githubusercontent.com/inmymum/dotfiles/main/images/planet_mountains.jpg
     rm ~/.bashrc
-    curl -so ~/.bashrc 
+    curl -so ~/.bashrc ttps://raw.githubusercontent.com/inmymum/dotfiles/main/.bashrc
 }
 
 if [[ $(cat /etc/os-release|grep -w "NAME"|awk '{print substr($0, 6)}') = '"Arch Linux"' ]]; then
