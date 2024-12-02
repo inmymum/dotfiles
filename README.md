@@ -21,9 +21,9 @@ background: ```swaybg```
 
 status bar: ```waybar``` (needs ```ttf-font-awesome```)
 
-iwctl gui: ```iwmenu``` (AUR, [binary](https://github.com/inmymum/dotfiles/blob/main/usr/bin/iwmenu)) (needs ```fuzzel```)
+iwctl gui: ```iwmenu``` ([AUR](https://aur.archlinux.org/packages/iwmenu-git)) (needs ```fuzzel```)
 
-logout gui: ```wlogout```(AUR, [binary](https://github.com/inmymum/dotfiles/blob/main/usr/bin/wlogout)) 
+logout gui: ```wlogout```([AUR](https://aur.archlinux.org/packages/iwmenu-git)) 
 
 notification manager: ```dunst```
 
