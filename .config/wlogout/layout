@@ -1,6 +1,6 @@
 {
     "label" : "shutdown",
-    "action" : "systemctl poweroff",
+    "action" : "niri msg action quit skip-confirmation=true && systemctl poweroff",
     "keybind" : "s",
 }
 {
@@ -10,6 +10,6 @@
 }
 {
     "label" : "logout",
-    "action" : "niri msg action quit",
+    "action" : "niri msg action quit skip-confirmation=true",
     "keybind" : "l"
 }
