@@ -1,0 +1,15 @@
+{
+    "label" : "shutdown",
+    "action" : "hyprctl dispatch exit 2&>1; niri msg action quit skip-confirmation=true && systemctl poweroff",
+    "keybind" : "s",
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "keybind" : "r"
+}
+{
+    "label" : "logout",
+    "action" : "hyprctl dispatch exit 2&>1; niri msg action quit skip-confirmation=true",
+    "keybind" : "l"
+}
