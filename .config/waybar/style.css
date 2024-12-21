@@ -30,7 +30,7 @@ window#waybar.hidden {
     border-radius: 10px 10px 10px 10px;
     transition: none;
     color: #ffffff;
-    background: #383c4a;
+    background: none;
 }
 
 #pulseaudio {
@@ -40,7 +40,7 @@ window#waybar.hidden {
     border-radius: 10px;
     transition: none;
     color: #ffffff;
-    background: #383c4a;
+    background: none;
 }
 
 #pulseaudio.muted {
@@ -55,7 +55,7 @@ window#waybar.hidden {
     border-radius: 10px;
     transition: none;
     color: #ffffff;
-    background: #383c4a;
+    background: none;
 }
 
 #battery {
@@ -65,7 +65,7 @@ window#waybar.hidden {
     border-radius: 10px;
     transition: none;
     color: #ffffff;
-    background: #383c4a;
+    background: none;
 }
 
 #battery.charging {
@@ -95,7 +95,7 @@ window#waybar.hidden {
     border-radius: 10px;
     transition: none;
     color: #ffffff;
-    background: #383c4a;
+    background: none;
 }
 
 #custom-power {
@@ -104,7 +104,7 @@ window#waybar.hidden {
     border-radius: 10px;
     transition: none;
     color: #ffffff;
-    background: #383c4a;
+    background: none;
 }
 
 @keyframes blink {
