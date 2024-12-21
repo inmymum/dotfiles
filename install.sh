@@ -13,10 +13,9 @@ install_files() {
     curl -so ~/Pictures/background.jpg https://raw.githubusercontent.com/inmymum/dotfiles/main/images/planet_mountains.jpg
     curl -so ~/.local/share/scripts/open_amazon_music.sh https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/main/.local/share/scripts/open_amazon_music.sh
     curl -so ~/.local/share/scripts/focus_amazon_music.sh https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/main/.local/share/scripts/focus_amazon_music.sh
+    curl -so ~/.local/share/scripts/fuzzel_with_web_search.sh https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/main/.local/share/scripts/fuzzel_with_web_search.sh
     curl -so ~/.local/share/applications/amazon-music.desktop https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/main/.local/share/applications/amazon-music.desktop
     sed -i -e "s/TEMPUSER/$USER/" ~/.local/share/scripts/open_amazon_music.sh
-    chmod +x ~/.local/share/scripts/open_amazon_music.sh
-    chmod +x ~/.local/share/scripts/focus_amazon_music.sh
     sed -i -e "s/example_user/$USER/" ~/.config/niri/config.kdl
     rm ~/.bashrc
     curl -so ~/.bashrc https://raw.githubusercontent.com/inmymum/dotfiles/main/.bashrc
