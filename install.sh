@@ -19,13 +19,14 @@ install_files() {
     sed -i -e "s/example_user/$USER/" ~/.config/niri/config.kdl
     rm ~/.bashrc
     curl -so ~/.bashrc https://raw.githubusercontent.com/inmymum/dotfiles/main/.bashrc
+    echo -e 'In order for amazon music to work on chromium, launch brave with \nbrave --enable-features=UseOzonePlatform --ozone-platform=wayland https://music.amazon.com/my/library\nsign into it, and click allow on the widevine popup\ngive it up to 10 seconds to download, then it should work'
 }
 
 if [[ $(cat /etc/os-release|grep -w "NAME"|awk '{print substr($0, 6)}') = '"Arch Linux"' ]]; then
   sudo pacman -S --noconfirm --needed wget git curl nano tlp dunst fuzzel waybar swaybg alacritty ly niri gnu-free-fonts ttf-font-awesome brightnessctl chromium
   cd ~/ && if [ ! -d yay-bin ]; then git clone https://aur.archlinux.org/yay-bin.git; fi
   cd yay-bin && makepkg -si
-  yay -S --needed iwmenu-git wlogout mercury-browser-bin
+  yay -S --needed iwmenu-git wlogout mercury-browser-bin brave-bin
   cd ~/ && rm -rf ~/.cache/yay ~/.config/yay
   install_files
 fi
