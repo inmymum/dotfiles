@@ -10,12 +10,14 @@ install_files() {
     curl -so ~/.config/dunst/dunstrc https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/main/.config/dunst/dunstrc
     curl -so ~/.config/wlogout/layout https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/main/.config/wlogout/layout
     curl -so ~/.config/wlogout/style.css https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/main/.config/wlogout/style.css
-    curl -so ~/.local/share/scripts/open_amazon_music.sh https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/main/.local/share/scripts/open_amazon_music.sh
-    curl -so ~/.local/share/applications/amazon-music.desktop https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/main/.local/share/applications/amazon-music.desktop
     curl -so ~/Pictures/background.jpg https://raw.githubusercontent.com/inmymum/dotfiles/main/images/planet_mountains.jpg
+    curl -so ~/.local/share/scripts/open_amazon_music.sh https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/main/.local/share/scripts/open_amazon_music.sh
+    curl -so ~/.local/share/scripts/focus_amazon_music.sh https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/main/.local/share/scripts/focus_amazon_music.sh
+    curl -so ~/.local/share/applications/amazon-music.desktop https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/main/.local/share/applications/amazon-music.desktop
     sed -i -e "s/TEMPUSER/$USER/" ~/.local/share/scripts/open_amazon_music.sh
-    sed -i -e "s/example_user/$USER/" ~/.config/niri/config.kdl
     chmod +x ~/.local/share/scripts/open_amazon_music.sh
+    chmod +x ~/.local/share/scripts/focus_amazon_music.sh
+    sed -i -e "s/example_user/$USER/" ~/.config/niri/config.kdl
     rm ~/.bashrc
     curl -so ~/.bashrc https://raw.githubusercontent.com/inmymum/dotfiles/main/.bashrc
 }
