@@ -16,15 +16,16 @@ install_config_files() {
     curl -so ~/.bashrc https://raw.githubusercontent.com/inmymum/dotfiles/main/.bashrc
 }
 enable_services() {
+  read -s -n 1 -p "Do you want to enable tui display manager? enter y or n: " install_bluetooth
+  if [[ "$install_bluetooth" == "y" ]]; then clear && echo "Enabling bluetooth" && sudo systemctl enable bluetooth 2&>1; fi
   read -s -n 1 -p "Do you want to enable tui display manager? enter y or n: " install_ly
   if [[ "$install_ly" == "y" ]]; then echo "Enabling ly" && sudo systemctl enable ly 2&>1; fi
   read -s -n 1 -p "Do you want to enable tlp power management (Should use if on a laptop)? enter y or n: " install_tlp
   if [[ "$install_tlp" == "y" ]]; then clear && echo "Enabling tlp" && sudo systemctl enable tlp 2&>1; fi
-  echo "Installing yay aur manager"
 }
 
 if [[ $(cat /etc/os-release|grep -w "NAME"|awk '{print substr($0, 6)}') = '"Arch Linux"' ]]; then
-  sudo pacman -S --noconfirm --needed wget git curl nano tlp dunst fuzzel waybar swaybg alacritty ly niri gnu-free-fonts ttf-font-awesome
+  sudo pacman -S --noconfirm --needed wget git curl nano tlp dunst fuzzel waybar swaybg alacritty ly niri gnu-free-fonts ttf-font-awesome brightnessctl chromium blueman
   enable_services
   cd ~/ && if [ ! -d yay-bin ]; then git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -sci 2&>1; fi
   echo "Installing browser and utilities"
