@@ -14,7 +14,7 @@
     //***************************
 
     "mpris": {
-	"format": " {status_icon}  {title} ~ {artist} ",
+	"format": " {status_icon} ~ {title} ~ {artist} ",
         "tooltip-format": "Song: {title} \n Artist: {artist} \n Album: {album}",
         "status-icons": {
             "paused": "",
