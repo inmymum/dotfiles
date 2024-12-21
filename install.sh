@@ -16,7 +16,7 @@ install_config_files() {
     curl -so ~/.bashrc https://raw.githubusercontent.com/inmymum/dotfiles/main/.bashrc
 }
 enable_services() {
-  read -s -n 1 -p "Do you want to enable tui display manager? enter y or n: " install_bluetooth
+  read -s -n 1 -p "Do you want to enable bluetooth manager? enter y or n: " install_bluetooth
   if [[ "$install_bluetooth" == "y" ]]; then clear && echo "Enabling bluetooth" && sudo systemctl enable bluetooth 2&>1; fi
   read -s -n 1 -p "Do you want to enable tui display manager? enter y or n: " install_ly
   if [[ "$install_ly" == "y" ]]; then echo "Enabling ly" && sudo systemctl enable ly 2&>1; fi
