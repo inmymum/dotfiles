@@ -182,7 +182,7 @@ animations {
 
 binds {
     Mod+RETURN { spawn "alacritty"; }
-    F5 { spawn "fuzzel"; }
+    F5 { spawn "sh" "/home/example_user/.local/share/scripts/fuzzel_with_web_search.sh"; }
 
     F10 allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     F9 allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
