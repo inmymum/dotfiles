@@ -181,17 +181,16 @@ animations {
 }
 
 binds {
+    Mod+SPACE { spawn "sh" "/home/example_user/.local/share/scripts/fuzzel_with_web_search.sh"; }
+    Mod+Q { close-window; }
     Mod+RETURN { spawn "alacritty"; }
-    F5 { spawn "sh" "/home/example_user/.local/share/scripts/fuzzel_with_web_search.sh"; }
-
+    Mod+B { spawn "xdg-open" "duckduckgo.com"; }
+    F11 { fullscreen-window; }
     F10 allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     F9 allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     F8 allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-
-    //F7 { spawn "brightnessctl" "-q" "set" "+5%"; }
-    //F6 { spawn "brightnessctl" "-q" "set" "5%-"; }
-
-    Mod+Q { close-window; }
+    F7 { spawn "brightnessctl" "-q" "set" "+5%"; }
+    F6 { spawn "brightnessctl" "-q" "set" "5%-"; }
 
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-workspace-down; }
@@ -205,7 +204,6 @@ binds {
 
     // You can bind mouse wheel scroll ticks using the following syntax.
     // These binds will change direction based on the natural-scroll setting.
-    //
     // To avoid scrolling through workspaces really fast, you can use
     // the cooldown-ms property. The bind will be rate-limited to this value.
     // You can set a cooldown on any bind, but it's most useful for the wheel.
@@ -233,8 +231,4 @@ binds {
 
     // Switches focus between the current and the previous workspace.
     // Mod+Tab { focus-workspace-previous; }
-
-    Mod+SPACE { switch-preset-column-width; }
-    F4 { maximize-column; }
-    Mod+F { fullscreen-window; }
 }
