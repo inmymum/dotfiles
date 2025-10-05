@@ -21,9 +21,9 @@ background: ```swaybg```
 
 status bar: ```waybar``` (needs ```ttf-font-awesome```)
 
-iwctl gui: ```iwmenu``` ([AUR](https://aur.archlinux.org/packages/iwmenu-git)) (needs ```fuzzel```)
+iwctl gui: ```iwmenu``` ([AUR](https://aur.archlinux.org/packages/iwmenu)) (needs ```fuzzel```)
 
-logout gui: ```wlogout```([AUR](https://aur.archlinux.org/packages/iwmenu-git)) 
+logout gui: ```wlogout```([AUR](https://aur.archlinux.org/packages/wlogout)) 
 
 notification manager: ```dunst```
 
@@ -32,8 +32,8 @@ app launcher: ```fuzzel```
 
 
 ```
-sudo pacman -S --needed alacritty nano swaybg niri waybar ttf-font-awesome fuzzel ly dunst
-sudo yay -S iwmenu-git wlogout
+sudo pacman -S --needed alacritty nano swaybg niri waybar otf-font-awesome fuzzel ly dunst
+sudo yay -S iwmenu wlogout
 sudo systemctl enable ly
 ```
 
