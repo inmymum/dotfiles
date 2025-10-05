@@ -1,0 +1,10 @@
+formatted_notifications=$(echo "$(makoctl history)" | awk '
+/^Notification/ {
+    number = gensub(/Notification ([0-9]+):.*/, "\\1", "g", $0);
+    notification = substr($0, index($0, ":") + 2);
+    getline;
+    appname = $3;
+    gsub(/^ +/, "", appname);
+    print number, notification, "-", appname;
+}')
+makoctl invoke -n $(echo "$formatted_notifications" | fuzzel -d --accept-nth=1 --nth-delimiter=" "|sed 's/.*)\s*//')
