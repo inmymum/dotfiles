@@ -99,6 +99,7 @@ window#waybar.hidden {
 }
 
 #custom-power {
+    margin-right: 4px;
     padding-right: 10px;
     padding-left: 16px;
     border-radius: 10px;
