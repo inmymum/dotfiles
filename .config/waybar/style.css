@@ -107,6 +107,14 @@ window#waybar.hidden {
     color: #ffffff;
     background: #383c4a;
 }
+#custom-on-screen-keyboard-toggle {
+    padding-right: 8px;
+    padding-left: 8px;
+    border-radius: 10px;
+    transition: none;
+    color: #ffffff;
+    background: #383c4a;
+}
 #tray {
     border-radius: 10px;
     transition: none;
