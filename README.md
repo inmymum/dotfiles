@@ -35,12 +35,15 @@ app launcher: ```fuzzel```
 
 on screen keyboard: ```wvkbd-mobintl```([AUR](https://aur.archlinux.org/packages/wvkbd-git))
 
+calendar: ```gnome-calendar```
+
 
 
 ```
-sudo pacman -S --needed alacritty nano swaybg niri waybar otf-font-awesome fuzzel ly
+sudo pacman -S --needed alacritty nano swaybg niri waybar otf-font-awesome fuzzel ly gnome-calandar tlp git
 sudo yay -S iwmenu-git wlogout wvkbd-git
 sudo systemctl enable ly
+sudo systemctl enable tlp
 ```
 
 
