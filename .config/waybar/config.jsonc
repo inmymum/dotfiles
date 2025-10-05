@@ -1,13 +1,13 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
+    "height": 32, // Waybar height (to be removed for auto height)
     "margin": "0 0 0 0",
     // "width": 1366, // Waybar width
     // Choose the order of the modules
     "modules-left": ["custom/on-screen-keyboard-toggle"],
-    "modules-center": ["group/tool-bar","custom/notifications","clock"],
-    "modules-right": ["tray"],
+    "modules-center": ["group/tool-bar","custom/notifications","tray","clock","custom/app-closer"],
+    "modules-right": ["custom/app-overview","custom/app-launcher"],
 
     //***************************
     //*  Modules configuration  *
@@ -32,7 +32,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "reverse-scrolling": 1,
+        "reverse-scrolling": 0,
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
@@ -43,12 +43,14 @@
             "portable": "",
             "default": [" ", " ", " "]
         },
-        "min-length": 7
+        "min-length": 7,
+	"on-click":"~/.config/waybar/scripts/volume"
     },
     "backlight": {
         "device": "intel_backlight",
         "format": "{percent}% ",
-        "min-length": 7
+        "min-length": 7,
+        "on-click": "~/.config/waybar/scripts/brightness"
     },
     "network": {
 	"interface": "wlan0",
@@ -75,7 +77,18 @@
 	"format": "",
         "on-click": "pkill --signal 34 wvkbd-mobintl"
     },
- 
+    "custom/app-launcher": {
+        "format": "",
+        "on-click": "fuzzel --keyboard-focus=on-demand"
+    },
+    "custom/app-overview": {
+	"format": "",
+	"on-click": "niri msg action toggle-overview"
+    },
+    "custom/app-closer": {
+	"format": " Quit",
+	"on-click": "niri msg action close-window"
+    }, 
     "group/tool-bar": {
         "orientation": "horizontal",
         "drawer": {
