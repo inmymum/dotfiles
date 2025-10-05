@@ -71,7 +71,7 @@
     
     "custom/notifications": {
 	"format": "",
-        "on-click": "~/.config/waybar/scripts/notification-selector.sh"
+        "on-click": "~/.config/waybar/scripts/notification-selector"
     },
     "custom/on-screen-keyboard-toggle": {
 	"format": "",
