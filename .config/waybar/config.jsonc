@@ -1,13 +1,13 @@
 {
     "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    // "height": 30, // Waybar height (to be removed for auto height)
-    "margin": "5 20 0 20",
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
+    "margin": "0 0 0 0",
     // "width": 1366, // Waybar width
     // Choose the order of the modules
     "modules-left": [],
-    "modules-center": ["clock"],
-    "modules-right": ["group/status-bar"],
+    "modules-center": ["group/tool-bar","custom/notifications","clock"],
+    "modules-right": ["tray"],
 
     //***************************
     //*  Modules configuration  *
@@ -16,7 +16,8 @@
     "clock": {
         // "timezone": "America/Chicago",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%a, %d %b, %I:%M %p}"
+        "format": "{:%a, %d %b, %I:%M %p}",
+        "on-click": "gnome-calendar"
     },
     "battery": {
         "states": {
@@ -66,7 +67,12 @@
         "on-click": "/usr/bin/wlogout 2&>1"
     },
 
-    "group/status-bar": {
+    "custom/notifications": {
+	"format": "",
+        "on-click": "~/.config/waybar/scripts/notification-selector.sh"
+    },
+
+    "group/tool-bar": {
         "orientation": "horizontal",
         "drawer": {
             "transition-duration": 1000,
