@@ -7,4 +7,4 @@ formatted_notifications=$(echo "$(makoctl history)" | awk '
     gsub(/^ +/, "", appname);
     print number, notification, "-", appname;
 }')
-makoctl invoke $(echo "$formatted_notifications" | fuzzel -d -keyboard-focus=on-demand --hide-prompt --no-run-if-empty --accept-nth=1 --nth-delimiter=" " | sed 's/.*)\s*//')
+makoctl invoke $(echo "$formatted_notifications" | fuzzel --dmenu --keyboard-focus=on-demand --hide-prompt --no-run-if-empty --accept-nth=1 --nth-delimiter=" " | sed 's/.*)\s*//')
