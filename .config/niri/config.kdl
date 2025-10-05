@@ -277,7 +277,7 @@ window-rule {
 spawn-at-startup "waybar" "--log-level" "off"
 spawn-at-startup "swaybg" "-i" "/home/isaac/Pictures/planet_mountains.jpg"
 spawn-at-startup "wvkbd-mobintl"
-spawn-sh-at-startup "sleep 0.2s && pkill --signal 34 wvkbd-mobintl"
+spawn-sh-at-startup "sleep 0.4s && pkill --signal 34 wvkbd-mobintl"
 
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
