@@ -33,11 +33,13 @@ notification manager: ```mako```
 
 app launcher: ```fuzzel```
 
+on screen keyboard: ```wvkbd-mobintl```([AUR](https://aur.archlinux.org/packages/wvkbd-git))
+
 
 
 ```
 sudo pacman -S --needed alacritty nano swaybg niri waybar otf-font-awesome fuzzel ly
-sudo yay -S iwmenu-git wlogout
+sudo yay -S iwmenu-git wlogout wvkbd-git
 sudo systemctl enable ly
 ```
 
