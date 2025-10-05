@@ -1,0 +1,9 @@
+on-touch=invoke-default-action
+
+font=Liberation Mono, 10
+background-color=#383c4a90
+
+border-radius=10
+
+layer=top
+anchor=top-left
