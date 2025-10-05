@@ -5,7 +5,7 @@
     "margin": "0 0 0 0",
     // "width": 1366, // Waybar width
     // Choose the order of the modules
-    "modules-left": [],
+    "modules-left": ["custom/on-screen-keyboard-toggle"],
     "modules-center": ["group/tool-bar","custom/notifications","clock"],
     "modules-right": ["tray"],
 
@@ -17,7 +17,7 @@
         // "timezone": "America/Chicago",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%a, %d %b, %I:%M %p}",
-        "on-click": "gnome-calendar"
+        "on-click": "gnome-calendar" 
     },
     "battery": {
         "states": {
@@ -66,12 +66,16 @@
         "format": " ",
         "on-click": "/usr/bin/wlogout 2&>1"
     },
-
+    
     "custom/notifications": {
 	"format": "",
         "on-click": "~/.config/waybar/scripts/notification-selector.sh"
     },
-
+    "custom/on-screen-keyboard-toggle": {
+	"format": "",
+        "on-click": "pkill --signal 34 wvkbd-mobintl"
+    },
+ 
     "group/tool-bar": {
         "orientation": "horizontal",
         "drawer": {
