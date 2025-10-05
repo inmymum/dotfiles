@@ -1,0 +1,9 @@
+while true; do
+    output=$(printf "Done\n5%%+\n5%%-" | fuzzel -d)
+    for i in $output; do
+        if [[ $i == "Done" ]]; then
+            exit 0
+        fi
+        wpctl set-volume @DEFAULT_AUDIO_SINK@ "$i"
+    done
+done
