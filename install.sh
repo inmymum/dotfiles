@@ -5,7 +5,7 @@ install_dot_files() {
     curl -so ~/.config/hypr/hyprlock.conf https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/Restyle/.config/hypr/hyprlock.conf
     curl -so ~/.config/niri/config.kdl https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/Restyle/.config/niri/config.kdl
     curl -so ~/.config/waybar/config.jsonc https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/Restyle/.config/waybar/config.jsonc
-    curl -so ~/.config/waybar/style.css https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/main/.config/waybar/style.css
+    curl -so ~/.config/waybar/style.css https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/Restyle/.config/waybar/style.css
     curl -so ~/.config/waybar/scripts/notification-selector https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/Restyle/.config/waybar/scripts/notification-selector
     curl -so ~/.config/waybar/scripts/volume https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/Restyle/.config/waybar/scripts/volume
     curl -so ~/.config/waybar/scripts/brightness https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/Restyle/.config/waybar/scripts/brightness
