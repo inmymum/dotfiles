@@ -1,7 +1,7 @@
 #! /bin/bash
 
 install_dot_files() {
-    mkdir -r ~/.config/hypr ~/.config/niri ~/.config/fuzzel ~/.config/waybar/ ~/.config/waybar/scripts ~/.config/wlogout ~/.config/mako ~/.config/alacritty ~/Pictures
+    mkdir ~/.config/hypr ~/.config/niri ~/.config/fuzzel ~/.config/waybar/ ~/.config/waybar/scripts ~/.config/wlogout ~/.config/mako ~/.config/alacritty ~/Pictures
     curl -so ~/.config/hypr/hyprlock.conf https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/Restyle/.config/hypr/hyprlock.conf
     curl -so ~/.config/niri/config.kdl https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/Restyle/.config/niri/config.kdl
     curl -so ~/.config/waybar/config.jsonc https://raw.githubusercontent.com/inmymum/dotfiles/refs/heads/Restyle/.config/waybar/config.jsonc
@@ -48,7 +48,7 @@ echo " Otherwise, install power-profiles-daemon, and run systemctl enable power-
 echo " This will improve your battery a good bit (especially tlp on intel)"
 echo ""
 echo "Defualt keybinds:"
-echo " Windows + Shift + / -> "
+echo " Windows + Shift + / -> Help"
 echo " Windows + Space -> App launcher"
 echo " Windows + Enter -> Terminal"
 echo " Windows + Q -> Close current app"
