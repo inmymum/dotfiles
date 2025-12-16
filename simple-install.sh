@@ -17,4 +17,5 @@ curl -so ~/.bashrc https://raw.githubusercontent.com/inmymum/dotfiles/Restyle/.b
 
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 chmod +x ~/.config/waybar/scripts/notification-selector
-chmod +x ~/.config/waybar/scripts/brightnesschmod +x ~/.config/waybar/scripts/volume  
+chmod +x ~/.config/waybar/scripts/brightness
+chmod +x ~/.config/waybar/scripts/volume  
