@@ -41,7 +41,7 @@ calendar: ```gnome-calendar```
 
 ```
 sudo pacman -S --needed alacritty nano swaybg niri waybar otf-font-awesome fuzzel ly gnome-calandar tlp git
-sudo yay -S iwmenu-git wlogout wvkbd-git
+yay -S iwmenu-git wlogout wvkbd-git
 sudo systemctl enable ly
 sudo systemctl enable tlp
 ```
