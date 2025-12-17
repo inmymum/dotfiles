@@ -25,7 +25,7 @@ background: ```swaybg```
 
 status bar: ```waybar``` (needs ```otf-font-awesome```)
 
-iwctl gui: ```iwmenu``` ([AUR](https://aur.archlinux.org/packages/iwmenu-git)) (needs ```fuzzel```)
+iwctl (wifi) gui: ```iwmenu``` ([AUR](https://aur.archlinux.org/packages/iwmenu-git)) (needs ```fuzzel```)
 
 logout gui: ```wlogout```([AUR](https://aur.archlinux.org/packages/wlogout)) 
 
