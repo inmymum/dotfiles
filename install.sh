@@ -24,7 +24,7 @@ install_dot_files() {
     chmod +x ~/.config/waybar/scripts/volume  
 }
 
-if [[ $(cat /etc/os-release|grep -w "NAME"|awk '{print substr($0, 6)}') = '"Arch Linux"' ]]; then
+if [[ $(command -v pacman) ]]; then
   sudo pacman -S --noconfirm --needed wget git curl nano mako fuzzel waybar swaybg alacritty ly niri otf-font-awesome brightnessctl gnome-calendar hyprlock make
   clear
   cd ~/ && if [ ! -d yay-bin ]; then git clone https://aur.archlinux.org/yay-bin.git; fi
